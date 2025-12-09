@@ -94,8 +94,10 @@ const Gallery = () => {
 
           {/* Navigation */}
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
+              e.preventDefault();
               goToPrevious();
             }}
             className="absolute left-4 md:left-8 text-cream/70 hover:text-cream transition-colors duration-300 p-2"
@@ -105,8 +107,10 @@ const Gallery = () => {
           </button>
 
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
+              e.preventDefault();
               goToNext();
             }}
             className="absolute right-4 md:right-8 text-cream/70 hover:text-cream transition-colors duration-300 p-2"
@@ -127,7 +131,7 @@ const Gallery = () => {
                 controls
                 loop
                 playsInline
-                className="w-full rounded-2xl shadow-2xl"
+                className="w-full max-h-[70vh] rounded-2xl shadow-2xl object-contain bg-black"
               >
                 <source
                   src={galleryItems[currentIndex].src}
