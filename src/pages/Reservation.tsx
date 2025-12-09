@@ -137,7 +137,7 @@ Saat: ${formData.time}
                       >
                         Tarix
                       </label>
-                      <div className="relative">
+                      <div className="relative min-w-0 overflow-hidden">
                         <Calendar
                           className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
                           size={20}
@@ -149,7 +149,7 @@ Saat: ${formData.time}
                           required
                           value={formData.date}
                           onChange={handleChange}
-                          className="input-premium w-full min-w-0 pl-12"
+                          className="input-premium w-full min-w-0 max-w-full pl-12 pr-4 text-left appearance-none"
                         />
                       </div>
                     </div>
