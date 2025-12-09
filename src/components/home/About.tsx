@@ -2,6 +2,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
   const sectionRef = useScrollAnimation();
+  const aboutVideo = "/videos/atmosphere-4.mp4";
 
   return (
     <section className="section-padding bg-background">
@@ -14,13 +15,14 @@ const About = () => {
           <div className="relative order-2 lg:order-1">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-card">
               <video
+                key={aboutVideo}
                 autoPlay
                 muted
                 loop
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/videos/atmosphere-4.mp4" type="video/mp4" />
+                <source src={aboutVideo} type="video/mp4" />
               </video>
             </div>
             {/* Decorative element */}

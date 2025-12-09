@@ -3,19 +3,21 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ReservationCTA = () => {
   const sectionRef = useScrollAnimation();
+  const backgroundVideo = "/videos/atmosphere-3.mp4";
 
   return (
     <section className="relative py-32 md:py-40 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-secondary">
         <video
+          key={backgroundVideo}
           autoPlay
           muted
           loop
           playsInline
           className="w-full h-full object-cover opacity-30"
         >
-          <source src="/videos/atmosphere-2.mp4" type="video/mp4" />
+          <source src={backgroundVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/70" />
       </div>

@@ -13,11 +13,14 @@ const Hero = () => {
     }
   }, []);
 
+  const videoSrc = "/videos/atmosphere-2.mp4";
+
   return (
-    <section className="relative h-screen min-h-[700px] overflow-hidden">
+    <section className="relative h-screen min-h-[700px] overflow-hidden bg-secondary">
       {/* Video Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 lg:hidden">
         <video
+          key={videoSrc}
           ref={videoRef}
           autoPlay
           muted
@@ -28,10 +31,15 @@ const Hero = () => {
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <source src="/videos/atmosphere-1.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
         {/* Fallback background color */}
-        <div className="absolute inset-0 bg-secondary" />
+        <div
+          className={`absolute inset-0 bg-secondary transition-opacity duration-700 pointer-events-none ${
+            isLoaded ? "opacity-0" : "opacity-100"
+          }`}
+          aria-hidden="true"
+        />
       </div>
 
       {/* Gradient Overlay */}
