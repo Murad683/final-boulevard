@@ -1,0 +1,275 @@
+/* Fonts loaded via index.html for better performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Boulevard 1909 Premium Color Palette */
+    --background: 40 23% 95%; /* #F7F3EC - Main Surface Light */
+    --foreground: 108 9% 12%; /* #1E221D - Primary Text */
+
+    --card: 34 26% 85%; /* #E4D9C7 - Secondary Surface */
+    --card-foreground: 108 9% 12%;
+
+    --popover: 40 23% 95%;
+    --popover-foreground: 108 9% 12%;
+
+    --primary: 38 36% 62%; /* #C6AA76 - Accent Gold */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 107 11% 21%; /* #2F3A30 - Dark Green */
+    --secondary-foreground: 40 23% 95%;
+
+    --muted: 34 26% 85%;
+    --muted-foreground: 105 3% 44%; /* #6F736B */
+
+    --accent: 38 36% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 10 47% 40%; /* #8F4B3A - Dark Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 34 20% 78%;
+    --input: 34 20% 82%;
+    --ring: 38 36% 62%;
+
+    --radius: 1rem;
+
+    /* Custom Boulevard Variables */
+    --gold: 38 36% 62%;
+    --gold-hover: 38 36% 52%;
+    --dark-green: 107 11% 21%;
+    --dark-green-light: 107 11% 28%;
+    --cream: 40 23% 95%;
+    --cream-dark: 34 26% 85%;
+    --text-primary: 108 9% 12%;
+    --text-muted: 105 3% 44%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 30px -4px hsl(38 36% 62% / 0.15);
+    --shadow-card: 0 8px 40px -12px hsl(107 11% 21% / 0.1);
+    --shadow-button: 0 8px 32px -8px hsl(38 36% 62% / 0.4);
+    --shadow-button-hover: 0 12px 40px -8px hsl(38 36% 62% / 0.5);
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 107 11% 21%;
+    --sidebar-foreground: 40 23% 95%;
+    --sidebar-primary: 38 36% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 107 11% 28%;
+    --sidebar-accent-foreground: 40 23% 95%;
+    --sidebar-border: 107 11% 28%;
+    --sidebar-ring: 38 36% 62%;
+  }
+
+  .dark {
+    --background: 107 11% 21%;
+    --foreground: 40 23% 95%;
+    --card: 107 11% 16%;
+    --card-foreground: 40 23% 95%;
+    --popover: 107 11% 16%;
+    --popover-foreground: 40 23% 95%;
+    --primary: 38 36% 62%;
+    --primary-foreground: 107 11% 12%;
+    --secondary: 40 23% 95%;
+    --secondary-foreground: 107 11% 21%;
+    --muted: 107 11% 28%;
+    --muted-foreground: 105 3% 65%;
+    --accent: 38 36% 62%;
+    --accent-foreground: 107 11% 12%;
+    --destructive: 10 47% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 107 11% 28%;
+    --input: 107 11% 28%;
+    --ring: 38 36% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-medium uppercase tracking-widest 
+           rounded-full px-8 py-4 text-sm
+           shadow-button transition-all duration-300 ease-out
+           hover:bg-gold-hover hover:shadow-button-hover hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply bg-secondary/80 text-secondary-foreground font-medium uppercase tracking-widest
+           rounded-full px-8 py-4 text-sm border border-cream/20
+           backdrop-blur-sm transition-all duration-300 ease-out
+           hover:bg-secondary/60 hover:border-primary/40 hover:text-primary;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-foreground font-medium uppercase tracking-widest
+           rounded-full px-8 py-4 text-sm border border-foreground/20
+           transition-all duration-300 ease-out
+           hover:border-primary hover:text-primary;
+  }
+
+  /* Card Styles */
+  .card-premium {
+    @apply bg-card rounded-3xl p-8 shadow-card transition-all duration-300
+           hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card-surface {
+    @apply bg-background rounded-3xl p-8 shadow-card;
+  }
+
+  /* Input Styles */
+  .input-premium {
+    @apply bg-background border border-border/60 rounded-2xl px-6 py-4
+           text-foreground placeholder:text-muted-foreground
+           transition-all duration-300 ease-out
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .container-premium {
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Gold Separator */
+  .separator-gold {
+    @apply h-px bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+
+  /* Text Styles - Elegant, refined typography */
+  .text-display {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-relaxed font-medium tracking-tight;
+  }
+
+  .text-heading {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl leading-relaxed font-medium;
+  }
+
+  .text-subheading {
+    @apply font-display text-2xl md:text-3xl leading-relaxed font-medium;
+  }
+
+  /* Navigation Link */
+  .nav-link {
+    @apply relative text-sm uppercase tracking-widest font-medium transition-colors duration-300
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary
+           after:transition-all after:duration-300 hover:text-primary hover:after:w-full;
+  }
+
+  /* Overlay Gradient */
+  .overlay-gradient {
+    @apply absolute inset-0 bg-gradient-to-b from-secondary/70 via-secondary/50 to-secondary/80;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Custom shadows as utilities */
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-button-hover {
+    box-shadow: var(--shadow-button-hover);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
