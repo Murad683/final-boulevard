@@ -95,7 +95,7 @@ Saat: ${formData.time}
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="input-premium w-full pl-12"
+                        className="input-premium w-full min-w-0 pl-12"
                         placeholder="Adınızı daxil edin"
                       />
                     </div>
@@ -121,7 +121,7 @@ Saat: ${formData.time}
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="input-premium w-full pl-12"
+                        className="input-premium w-full min-w-0 pl-12"
                         placeholder="+994 XX XXX XX XX"
                       />
                     </div>
@@ -130,7 +130,7 @@ Saat: ${formData.time}
                   {/* Date & Time Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Date */}
-                    <div>
+                    <div className="min-w-0">
                       <label
                         htmlFor="date"
                         className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider"
@@ -149,13 +149,13 @@ Saat: ${formData.time}
                           required
                           value={formData.date}
                           onChange={handleChange}
-                          className="input-premium w-full pl-12"
+                          className="input-premium w-full min-w-0 pl-12"
                         />
                       </div>
                     </div>
 
                     {/* Time */}
-                    <div>
+                    <div className="min-w-0">
                       <label
                         htmlFor="time"
                         className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider"
@@ -173,7 +173,7 @@ Saat: ${formData.time}
                           required
                           value={formData.time}
                           onChange={handleChange}
-                          className="input-premium w-full pl-12 appearance-none cursor-pointer"
+                          className="input-premium w-full min-w-0 pl-12 appearance-none cursor-pointer"
                         >
                           <option value="">Seçin</option>
                           <option value="12:00">12:00</option>
@@ -209,7 +209,7 @@ Saat: ${formData.time}
                         required
                         value={formData.guests}
                         onChange={handleChange}
-                        className="input-premium w-full pl-12 appearance-none cursor-pointer"
+                        className="input-premium w-full min-w-0 pl-12 appearance-none cursor-pointer"
                       >
                         <option value="">Seçin</option>
                         <option value="1">1 nəfər</option>
